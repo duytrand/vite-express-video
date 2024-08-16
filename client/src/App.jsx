@@ -9,7 +9,7 @@ function App() {
   const [array, setArray] = useState([]);
 
   const fetchAPI = async () => {
-    const response = await axios.get("http://localhost:8080/api");
+    const response = await axios.get(import.meta.env.VITE_API_URL);
     setArray(response.data.fruits);
     console.log(response.data.fruits);
   };
@@ -30,9 +30,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
@@ -43,9 +41,7 @@ function App() {
           </div>
         ))}
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
     </>
   );
 }
