@@ -9,7 +9,7 @@ function App() {
   const [array, setArray] = useState([]);
 
   const fetchAPI = async () => {
-    const response = await axios.get("https://duyviteserver.azurewebsites.net:443/api");
+    const response = await axios.get("https://duyviteserver-axgfc7b6c6h4ehc0.eastus-01.azurewebsites.net/api");
     setArray(response.data.fruits);
     console.log(response.data.fruits);
   };
